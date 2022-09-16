@@ -1,1 +1,0 @@
-/usr/bin/cc -fPIC   -shared -Wl,-soname,libpmemwrap.so -o libpmemwrap.so CMakeFiles/pmemwrap.dir/pmemopenwrap.c.o 
