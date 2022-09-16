@@ -1,13 +1,9 @@
-/*
- * hello_libpmemobj.c -- an example for libpmemobj library
- */
-
 #include <stdio.h>
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
 #include <libpmemobj.h>
-//#include "pmemopenwrap.h"
+#include "pmemopenwrap.h"
 
 // Name of our layout in the pool
 #define LAYOUT "KVS_layout"
@@ -45,10 +41,6 @@ POBJ_LAYOUT_TOID(string_store, struct subKVstruct);
 POBJ_LAYOUT_END(string_store);
 
 
-// PMEMobjpool inline static *testpmemobj_open(const char *path, const char *layout){
-//     printf("test");
-//     return pmemobj_open(path, layout);
-// }
 
 void write_KVS (char *key, int value)
 {
@@ -56,16 +48,11 @@ void write_KVS (char *key, int value)
     int id;
     TOID(struct KVstruct) root;
     TOID(struct subKVstruct) sub;
-
-    //printf(testfunc());
-
-    //char *num_path = NUM_PATH;
     
     pop = pmemobj_create(PATH, POBJ_LAYOUT_NAME(string_store), PMEMOBJ_MIN_POOL, 0666);
 		
 	if (pop == NULL) 
 	{
-        //testpmemobj_open(PATH, POBJ_LAYOUT_NAME(string_store));
         pop = pmemobj_open(PATH, POBJ_LAYOUT_NAME(string_store));
 
         printf("test3\n");
@@ -100,9 +87,6 @@ void write_KVS (char *key, int value)
 	return;
 }
 
-/****************************
- * This function reads the "Hello..." string from persistent-memory.
- *****************************/
 void read_KVS(char *key, int read_flag, int id)
 {
     PMEMobjpool *pop;

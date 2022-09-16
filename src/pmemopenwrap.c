@@ -4,9 +4,11 @@
 #include <string.h>
 #include <libpmemobj.h>
 
+#undef pmemobj_open
+#undef pmemobj_tx_process
+
 int copyFile(const char* srcPath, const char* destPath);
 
-#undef pmemobj_open
 extern inline PMEMobjpool *pmemobjtest_open(const char *path, const char *layout){
     printf("test\n");
     char dest_path[255];
@@ -18,7 +20,15 @@ extern inline PMEMobjpool *pmemobjtest_open(const char *path, const char *layout
 
     return pmemobj_open(dest_path, layout);
 }
+
+extern inline void pmemobjtest_tx_process(){
+    printf("test tx_process\n");
+
+    pmemobj_tx_process();
+}
+
 #define pmemobj_open pmemobjtest_open
+#define pmemobj_tx_process pmemobjtest_tx_process
 
 int copyFile(const char* srcPath, const char* destPath){
     if (strcmp(srcPath, destPath) == 0)
