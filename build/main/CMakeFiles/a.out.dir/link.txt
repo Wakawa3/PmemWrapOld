@@ -1,1 +1,0 @@
-/usr/bin/cc    CMakeFiles/a.out.dir/PmemKVS4.c.o  -o a.out  -Wl,-rpath,/home/satoshi/PmemWrap/build/src ../src/libpmemwrap.so -lpmem -lpmemobj 
