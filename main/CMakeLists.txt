@@ -1,4 +1,4 @@
-add_executable(a.out PmemKVS4.c)
+add_executable(a.out PmemKVS.c)
 # a.outをコンパイルする際にgreetingsをリンクする
 target_link_libraries(a.out pmemwrap)
 target_link_libraries(a.out pmem)
