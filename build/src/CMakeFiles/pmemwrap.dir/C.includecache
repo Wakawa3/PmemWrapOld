@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/satoshi/PmemWrap/src/pmemopenwrap.c
+stdio.h
+-
+errno.h
+-
+stdlib.h
+-
+string.h
+-
+libpmemobj.h
+-
+

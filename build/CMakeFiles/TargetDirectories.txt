@@ -1,0 +1,8 @@
+/home/satoshi/PmemWrap/build/CMakeFiles/rebuild_cache.dir
+/home/satoshi/PmemWrap/build/CMakeFiles/edit_cache.dir
+/home/satoshi/PmemWrap/build/src/CMakeFiles/rebuild_cache.dir
+/home/satoshi/PmemWrap/build/src/CMakeFiles/edit_cache.dir
+/home/satoshi/PmemWrap/build/src/CMakeFiles/pmemwrap.dir
+/home/satoshi/PmemWrap/build/main/CMakeFiles/rebuild_cache.dir
+/home/satoshi/PmemWrap/build/main/CMakeFiles/edit_cache.dir
+/home/satoshi/PmemWrap/build/main/CMakeFiles/a.out.dir
