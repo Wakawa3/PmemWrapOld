@@ -3,44 +3,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <libpmemobj.h>
-#include "pmemopenwrap.h"
-
-// Name of our layout in the pool
-#define LAYOUT "KVS_layout"
-//#define NUM_LAYOUT "number"
-
-// Maximum length of our buffer
-#define MAX_BUF_LEN 30
-#define MAX_STORE 100
-
-#define PATH "/mnt/pmem0/data"
-// #define PATH "/mnt/pmem0/data_replica"
-//#define NUM_PATH "num"
-
-#define READ_FROM_KEY 0
-#define READ_ALL 1
-#define READ_FROM_ID 2
-
-// Root structure
-struct subKVstruct {
-	//int id;
-    int keylen;
-	char key[MAX_BUF_LEN];
-    int value;
-};
-
-
-struct KVstruct{
-    struct subKVstruct data[MAX_STORE];
-    int number;
-};
+#include "PmemKVS.h"
+//#include "pmemopenwrap.h"
 
 POBJ_LAYOUT_BEGIN(string_store);
 POBJ_LAYOUT_ROOT(string_store, struct KVstruct);
 POBJ_LAYOUT_TOID(string_store, struct subKVstruct);
 POBJ_LAYOUT_END(string_store);
-
-
 
 void write_KVS (char *key, int value)
 {
