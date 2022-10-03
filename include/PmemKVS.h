@@ -6,6 +6,7 @@
 #define MAX_STORE 100
 
 #define PATH "/mnt/pmem0/data"
+#define PMEM_POS "/mnt/pmem0/"
 // #define PATH "/mnt/pmem0/data_replica"
 
 #define READ_FROM_KEY 0
